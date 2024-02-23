@@ -6,6 +6,6 @@ const router = Router();
 router.get('/', home)
 router.get('/comments', getAll)
 router.post('/comments', insertOne);
-router.get('/comments/delete/:description', deleteOne);
+router.get('/comments/delete/:num_identif', deleteOne);
 
 export default router;
