@@ -14,7 +14,7 @@ commentsDAO.getAll = async() =>{
 };
 commentsDAO.deleteOne= async(num_identif) =>{ 
     console.log(num_identif)
-    return await Comment.findOneAndDelete({barcode:num_identif})
+    return await Comment.findOneAndDelete({num_identif:num_identif})
      
 };
 
