@@ -13,6 +13,7 @@ commentsDAO.getAll = async() =>{
     return comments;
 };
 commentsDAO.deleteOne= async(description) =>{ 
+    console.log("description")
     return await Comment.findOneAndDelete({description:description})
      
 };
