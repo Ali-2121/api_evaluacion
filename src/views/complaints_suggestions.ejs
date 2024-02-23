@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <title>Comentarios y quejas</title>
+</head>
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <div data-role="navbar" data.iconpos="bottom">
+                <ul>
+                    <li><a href="/" data-icon="home" data-transition="slidefade">Home</a></li>
+                    <li><a href="/products" data-icon="grid" data-transition="slidefade">Products</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="content">
+            <h1>Cuéntanos cómo fue tu experiencia de compra con nosotros ☺</h1>
+            <form action="/comments" method="POST">
+                <label for="experience" class="select">¿Cómo describirías tu experiencia?</label>
+                    <select name="experience" id="experience">
+                        <option value="mala">Mala</option>
+                        <option value="regular">Regular</option>
+                        <option value="buena">Buena</option>
+                        <option value="excelente">Excelente</option>
+                    </select>
+                
+                <input type="text" name="name" id="txt_name" placeholder="Ingresa tu nombre" value="">
+                
+                <label for="textarea">Cuéntanos qué fue lo que más te gustó o en qué podríamos mejorar:</label>
+                <textarea cols="40" rows="8" name="description" id="textarea"></textarea>
+
+                <button type="submit" class="ui-shadow ui-btn ui-corner-all ui-mini">Enviar comentario</button>
+            </form>
+            <br>
+            <br>
+            <h2>Aquí tus comentarios registrados:</h2>
+                    <div data-role="collapsibleset" data-filter="true" data-inset="true" id="collapsiblesetForFilter" data-input="#searchForCollapsibleSet">
+                        <% comments.forEach((comment)=>{%>
+                            <div data-role="collapsible" data-filtertext="<%= comment.experience %>">
+                                <h3><%= comment.experience %></h3>
+                                <ul data-role="listview" data-inset="false">
+                                    <li>Comentario: <%= comment.description %></li>
+                                    <li>Comentario: <%= comment.experience %></li>
+                                    <li>
+                                        <a href="/comments/delete/<%= comment.description%>" class="ui-btn">Eliminar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        <%})%>
+                    </div>
+            </div>
+            <div data-role="footer">
+                <h5>Hecho con una 💻 y con ❤ por Alina Bonilla</h5>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
