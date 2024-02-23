@@ -12,9 +12,9 @@ commentsDAO.getAll = async() =>{
     const comments = await Comment.find();
     return comments;
 };
-commentsDAO.deleteOne= async(description) =>{ 
-    console.log("description")
-    return await Comment.findOneAndDelete({description:description})
+commentsDAO.deleteOne= async(num_identif) =>{ 
+    console.log(num_identif)
+    return await Comment.findOneAndDelete({barcode:num_identif})
      
 };
 
