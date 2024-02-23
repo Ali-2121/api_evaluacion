@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 const commentSchema = new Schema({
-    barcode: String,
+    num_identif: String,
     experience: String,
     name:String,
     description:String
