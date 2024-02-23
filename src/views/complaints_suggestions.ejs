@@ -42,14 +42,13 @@
             </form>
             <br>
             <br>
-            <h2>Aquí tus comentarios registrados:</h2>
+            <h2>Aquí tus experiencias registradas:</h2>
                     <div data-role="collapsibleset" data-filter="true" data-inset="true" id="collapsiblesetForFilter" data-input="#searchForCollapsibleSet">
                         <% comments.forEach((comment)=>{%>
                             <div data-role="collapsible" data-filtertext="<%= comment.experience %>">
                                 <h3><%= comment.experience %></h3>
                                 <ul data-role="listview" data-inset="false">
                                     <li>Comentario: <%= comment.description %></li>
-                                    <li>Comentario: <%= comment.experience %></li>
                                     <li>
                                         <a href="/comments/delete/<%= comment.description%>" class="ui-btn">Eliminar</a>
                                     </li>
