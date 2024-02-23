@@ -32,7 +32,7 @@
                         <option value="buena">Buena</option>
                         <option value="excelente">Excelente</option>
                     </select>
-                
+                <input type="text" name="num_identif" id="txt_name" placeholder="Número de comentario" value="">
                 <input type="text" name="name" id="txt_name" placeholder="Ingresa tu nombre" value="">
                 
                 <label for="textarea">Cuéntanos qué fue lo que más te gustó o en qué podríamos mejorar:</label>
@@ -48,9 +48,11 @@
                             <div data-role="collapsible" data-filtertext="<%= comment.experience %>">
                                 <h3><%= comment.experience %></h3>
                                 <ul data-role="listview" data-inset="false">
+                                    <li>Nonbre de usuario: <%= comment.name %></li>
+                                    <li>
                                     <li>Comentario: <%= comment.description %></li>
                                     <li>
-                                        <a href="/comments/delete/<%= comment.description%>" class="ui-btn">Eliminar</a>
+                                        <a href="/comments/delete/<%= comment.num_identif%>" class="ui-btn">Eliminar</a>
                                     </li>
                                 </ul>
                             </div>
