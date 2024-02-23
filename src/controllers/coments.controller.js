@@ -18,7 +18,8 @@ export const insertOne = (req,res)=>{
 }
 
 export const deleteOne = (req,res)=>{
-    commentsDAO.deleteOne(req.params.description)
+    commentsDAO.deleteOne(req.params.num_identif)
+        console.log(req.params.num_identif)
         .then(result => {
             !result ? res.redirect('/comments')
              : res.redirect('/comments')
